@@ -8,10 +8,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lbl_register"
-        android:textSize="25sp"
         android:layout_marginBottom="15dp"
-        android:textAlignment="center"/>
+        android:text="@string/lbl_register"
+        android:textAlignment="center"
+        android:textSize="25sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -77,16 +77,20 @@
         <Button
             android:id="@+id/btn_save"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_save" />
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="@string/lbl_save"
+            android:textColor="#fff" />
 
         <Button
             android:id="@+id/btn_cancel"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_cancel" />
+            android:layout_weight="1"
+            android:background="@color/colorRed"
+            android:text="@string/lbl_cancel"
+            android:textColor="#fff" />
     </LinearLayout>
 
 </LinearLayout>
