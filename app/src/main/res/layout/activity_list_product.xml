@@ -9,14 +9,15 @@
         android:id="@+id/btn_new_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:drawableLeft="@drawable/ic_add"
+        android:drawablePadding="2dp"
         android:text="@string/lbl_new_product"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_marginBottom="10dp"/>
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ListView
         android:id="@+id/lsv_products"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </ListView>
+        android:layout_height="wrap_content"></ListView>
 
 </LinearLayout>
