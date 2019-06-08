@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Oxxito</string>
+    <!-- Labels -->
+    <string name="lbl_register_product">Registrar productos</string>
+    <string name="lbl_start">Inicializar DB</string>
+    <string name="lbl_register">Registro</string>
+    <string name="lbl_code">Codigo</string>
+    <string name="lbl_product">Producto</string>
+    <string name="lbl_price">Precio</string>
+    <string name="lbl_stock">Existencias</string>
+    <string name="lbl_date">Fecha de caducidad</string>
+    <string name="lbl_save">Guardar</string>
+    <string name="lbl_cancel">Cancelar</string>
+    <string name="lbl_manage_product">Gestión de Productos</string>
+    <string name="lbl_update">Editar</string>
+    <string name="lbl_delete">Eliminar</string>
+    <string name="lbl_new_product">Nuevo producto</string>
+</resources>
