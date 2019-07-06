@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import net.llira.oxxitoapp.dao.Connection;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private Button btnRegister, btnStart;
 
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v.getId() == R.id.btn_start) {
             try {
+                Connection conn = new Connection(getApplication());
+                conn.startDb();
                 Toast.makeText(getApplicationContext(), "DB Starting...", Toast.LENGTH_LONG).show();
             } catch (Exception e) {
                 Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();

@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import net.llira.oxxitoapp.dao.ProductDAO;
+import net.llira.oxxitoapp.models.Product;
+
 public class NewProductActivity extends AppCompatActivity {
     private EditText txtCode, txtProduct, txtPrice, txtStock, txtDate;
     private Button btnSave, btnCancel;
@@ -28,8 +31,28 @@ public class NewProductActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Saved!", Toast.LENGTH_LONG).show();
-                //System.exit(0);
+                Product p = new Product();
+                p.setCode(txtCode.getText().toString());
+                p.setName(txtProduct.getText().toString());
+                p.setPrice(Double.parseDouble(txtPrice.getText().toString()));
+                p.setStock(Integer.valueOf(txtStock.getText().toString()));
+                p.setDate(txtDate.getText().toString());
+                // Se crea un objeto DAO para almacenar el objeto
+                ProductDAO dao = new ProductDAO(getApplicationContext());
+                // Se intenta insertar el objeto
+                try {
+                    dao.insert(p);
+                    System.out.println("Nito?");
+                    clean();
+                    // Se muestra un mensaje de exito
+                    Toast.makeText(getApplicationContext(), "Yay! Saved Product",
+                            Toast.LENGTH_LONG).show();
+                    System.exit(0);
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "Ups! Error!: " + e.getMessage(),
+                            Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
@@ -37,16 +60,17 @@ public class NewProductActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Canceled!", Toast.LENGTH_LONG).show();
-                //System.exit(0);
+                clean();
+                System.exit(0);
             }
         });
     }
 
-    public void clean(){
+    public void clean() {
         txtCode.setText("");
         txtProduct.setText("");
         txtPrice.setText("");
         txtStock.setText("");
         txtDate.setText("");
     }
-}
+}//End class
